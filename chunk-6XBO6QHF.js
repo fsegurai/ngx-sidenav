@@ -1,0 +1,1 @@
+import{Hb as o,Ib as s,bc as a,jb as n}from"./chunk-2UMWWG7P.js";var t=class t{};t.\u0275fac=function(e){return new(e||t)},t.\u0275cmp=n({type:t,selectors:[["app-push-notification"]],decls:2,vars:0,template:function(e,p){e&1&&(o(0,"h2"),a(1,"Push Notifications"),s())},encapsulation:2});var i=t;export{i as default};

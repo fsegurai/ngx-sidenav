@@ -1,0 +1,1 @@
+import{Hb as s,Ib as o,bc as a,jb as n}from"./chunk-2UMWWG7P.js";var e=class e{};e.\u0275fac=function(t){return new(t||e)},e.\u0275cmp=n({type:e,selectors:[["app-security"]],decls:2,vars:0,template:function(t,r){t&1&&(s(0,"h2"),a(1,"Security Settings"),o())},encapsulation:2});var i=e;export{i as default};
