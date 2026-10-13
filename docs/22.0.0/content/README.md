@@ -1,6 +1,6 @@
 ---
 label: Documentation Home
-description: Documentation for @fsegurai/ngx-sidenav 22.0.0-beta.0, a resizable, stack-based Angular sidenav that renders manifest-generator navigation and search.
+description: Documentation for @fsegurai/ngx-sidenav 22.0.0, a resizable, stack-based Angular sidenav that renders manifest-generator navigation and search.
 order: 0
 tags: [ "documentation", "overview", "angular" ]
 keywords: [ "sidenav", "navigation", "manifest", "search" ]
