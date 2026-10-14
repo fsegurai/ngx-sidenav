@@ -1,0 +1,488 @@
+[
+  {
+    "label": "Documentation Home",
+    "description": "Documentation for @fsegurai/ngx-sidenav 22.0.0, a resizable, stack-based Angular sidenav that renders manifest-generator navigation and search.",
+    "route": "content/README",
+    "tags": ["documentation", "overview", "angular"],
+    "headings": ["Quick path", "Sections", "Version"],
+    "excerpt": "@fsegurai/ngx-sidenav Docs\n\n is a resizable, collapsible Angular sidenav built on a navigation stack: every level you\nopen is pushed on the stack,...",
+    "breadcrumb": [
+      {
+        "label": "Home",
+        "route": "content/README"
+      }
+    ]
+  },
+  {
+    "label": "API Reference",
+    "description": "Components, services, providers and types exported by @fsegurai/ngx-sidenav.",
+    "route": "content/api/README",
+    "tags": ["api", "overview"],
+    "excerpt": "API Reference\n\n| Page | Exports |\n|------|---------|\n| Sidenav | ( ) |\n| Sidenav Menu | , |\n| Link Item | |\n| Sidenav Search | , , search types |\n|...",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "API",
+        "route": "content/api/README"
+      }
+    ]
+  },
+  {
+    "label": "Link Item",
+    "description": "The ngx-sidenav-link-item component used for every menu row.",
+    "route": "content/api/link-item",
+    "tags": ["api", "component"],
+    "excerpt": " renders one row as a link, a button or a title.",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Link Item",
+        "route": "content/api/link-item"
+      }
+    ]
+  },
+  {
+    "label": "Providers",
+    "description": "provideSidenav, withManifest, withSearchIndex, the default mappers and the label providers.",
+    "route": "content/api/providers",
+    "tags": ["api", "providers"],
+    "headings": ["provideSidenav(config?, ...features)", "withManifest(options)", "withSearchIndex(options)", "Labels"],
+    "excerpt": "Providers\n\nprovideSidenav(config?, ...features)\n\n| Argument | Type |\n|----------|------|\n| | |\n| | , ; one of each at most....",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Providers",
+        "route": "content/api/providers"
+      }
+    ]
+  },
+  {
+    "label": "Sidenav Menu",
+    "description": "The ngx-sidenav-menu component and the StackMenuItem interface.",
+    "route": "content/api/sidenav-menu",
+    "tags": ["api", "component", "menu"],
+    "headings": ["Inputs", "StackMenuItem"],
+    "excerpt": " renders one menu level. uses it for the current level; you rarely need it alone.",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Sidenav Menu",
+        "route": "content/api/sidenav-menu"
+      }
+    ]
+  },
+  {
+    "label": "Sidenav Search",
+    "description": "The ngx-sidenav-search combobox, SidenavSearchService and the search types.",
+    "route": "content/api/sidenav-search",
+    "tags": ["api", "component", "search"],
+    "headings": ["`<ngx-sidenav-search>`", "SidenavSearchService", "Helpers"],
+    "excerpt": "| input | ( ) | Ctrl+K / Cmd+K focuses the box.",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Sidenav Search",
+        "route": "content/api/sidenav-search"
+      }
+    ]
+  },
+  {
+    "label": "Sidenav Service",
+    "description": "SidenavService methods and signals, and the stack item types.",
+    "route": "content/api/sidenav-service",
+    "tags": ["api", "service"],
+    "headings": ["Methods", "Signals", "Stack items"],
+    "excerpt": "Sidenav Service\n\n is provided in root.\n\nMethods\n\n| Method | Description |\n|--------|-------------|\n| | Pushes a or ; resolves after the animation....",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Sidenav Service",
+        "route": "content/api/sidenav-service"
+      }
+    ]
+  },
+  {
+    "label": "Sidenav",
+    "description": "Inputs and outputs of the ngx-sidenav component.",
+    "route": "content/api/sidenav",
+    "tags": ["api", "component"],
+    "headings": ["Inputs", "Outputs"],
+    "excerpt": "Sidenav\n\n : the resizable panel.\n\nInputs\n\n| Input | Type | Default | Description |\n|-------|------|---------|-------------|\n| | | | Root menu; falls...",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Sidenav",
+        "route": "content/api/sidenav"
+      }
+    ]
+  },
+  {
+    "label": "Getting Started",
+    "description": "Install @fsegurai/ngx-sidenav and render your first navigation menu.",
+    "route": "content/getting-started/README",
+    "tags": ["getting-started", "overview"],
+    "excerpt": "Two steps take you from zero to a working sidenav.",
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      },
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started/README"
+      }
+    ]
+  },
+  {
+    "label": "Installation",
+    "description": "Install @fsegurai/ngx-sidenav with its Angular peers and load the Material Symbols font.",
+    "route": "content/getting-started/installation",
+    "tags": ["getting-started", "installation"],
+    "headings": ["Peer dependencies", "Icons", "Next step"],
+    "excerpt": "Installation\n\nInstall the library with your package manager:\n\n \n\nPeer dependencies\n\nThe package expects these Angular 22 packages in your...",
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      },
+      {
+        "label": "Installation",
+        "route": "content/getting-started/installation"
+      }
+    ]
+  },
+  {
+    "label": "Quick Start",
+    "description": "Render a resizable sidenav with nested menu items in a standalone, zoneless Angular application.",
+    "route": "content/getting-started/quick-start",
+    "tags": ["getting-started", "quick-start"],
+    "headings": ["1. Provide the router", "2. Render the sidenav", "3. Lay it out", "Next steps"],
+    "excerpt": "Quick Start\n\nProvide the router\n\nThe sidenav links are router links, so the application needs :\n\n \n\n is optional for a static menu; it becomes useful...",
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      },
+      {
+        "label": "Quick Start",
+        "route": "content/getting-started/quick-start"
+      }
+    ]
+  },
+  {
+    "label": "Guides",
+    "description": "Task-oriented guides for menus, the stack service, manifests, search, theming, accessibility and labels.",
+    "route": "content/guides/README",
+    "tags": ["guides", "overview"],
+    "excerpt": "| Declarative Items | You define the menu as .",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Guides",
+        "route": "content/guides/README"
+      }
+    ]
+  },
+  {
+    "label": "Accessibility",
+    "description": "Keyboard support, ARIA roles and focus management of the sidenav, menu and search box.",
+    "route": "content/guides/accessibility",
+    "tags": ["guides", "accessibility"],
+    "headings": ["Panel", "Menu", "Search"],
+    "excerpt": "The panel is a with an accessible name ( ).",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Accessibility",
+        "route": "content/guides/accessibility"
+      }
+    ]
+  },
+  {
+    "label": "Component Stacking",
+    "description": "Push your own Angular components as sidenav levels and pass them inputs with componentData.",
+    "route": "content/guides/component-stacking",
+    "tags": ["guides", "components"],
+    "headings": ["Lifecycle tip"],
+    "excerpt": "A level can be any standalone component.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Component Stacking",
+        "route": "content/guides/component-stacking"
+      }
+    ]
+  },
+  {
+    "label": "Custom Schemas",
+    "description": "Feed the sidenav and the search box from any navigation format with custom mapper functions.",
+    "route": "content/guides/custom-schemas",
+    "tags": ["guides", "manifest", "search"],
+    "excerpt": "Both features accept a that turns your raw data into the library types.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Custom Schemas",
+        "route": "content/guides/custom-schemas"
+      }
+    ]
+  },
+  {
+    "label": "Declarative Items",
+    "description": "",
+    "route": "content/guides/declarative-items",
+    "tags": [],
+    "headings": ["Item kinds", "Optional properties", "Precedence"],
+    "excerpt": "Declarative Items\n\nBind an array of to . Whenever the array changes, the stack is rebuilt for the\ncurrent route.\n\nItem kinds\n\n| Shape | Renders as...",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Declarative Items",
+        "route": "content/guides/declarative-items"
+      }
+    ]
+  },
+  {
+    "label": "Labels and i18n",
+    "description": "Translate every text rendered or announced by the sidenav with provideSidenav labels or provideSidenavLabels.",
+    "route": "content/guides/i18n-labels",
+    "tags": ["guides", "i18n"],
+    "headings": ["Keys"],
+    "excerpt": "Every built-in text comes from the token, English by default.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Labels and i18n",
+        "route": "content/guides/i18n-labels"
+      }
+    ]
+  },
+  {
+    "label": "Lazy Levels and Resilient Sources",
+    "description": "Load menu levels on demand with loadChildren, split manifests with childrenSource, and keep data through failed reloads with retry and backoff.",
+    "route": "content/guides/lazy-levels",
+    "tags": ["guides", "lazy", "availability"],
+    "headings": [
+      "Lazy levels with `loadChildren`",
+      "Route sync and persisted levels",
+      "Split manifests with `childrenSource`",
+      "Resilient sources",
+      "Labels"
+    ],
+    "excerpt": "Large or remote menus do not need to be loaded at once.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Lazy Levels and Resilient Sources",
+        "route": "content/guides/lazy-levels"
+      }
+    ]
+  },
+  {
+    "label": "Manifest Generator",
+    "description": "Build the sidenav from the manifest.json produced by @fsegurai/manifest-generator with provideSidenav and withManifest.",
+    "route": "content/guides/manifest-generator",
+    "tags": ["guides", "manifest"],
+    "headings": ["1. Write the pages", "2. Generate", "3. Provide the manifest", "4. Render"],
+    "excerpt": "front-matter into (navigation) and (search). ngx-sidenav reads both natively.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Manifest Generator",
+        "route": "content/guides/manifest-generator"
+      }
+    ]
+  },
+  {
+    "label": "Performance and Large Datasets",
+    "description": "How ngx-sidenav stays responsive with 100k menu items and 50k search entries, the recommended settings by dataset size, measured numbers and how to benchmark.",
+    "route": "content/guides/performance",
+    "tags": ["guides", "performance", "search"],
+    "headings": [
+      "How the library stays responsive",
+      "Recommended settings by dataset size",
+      "Measured numbers",
+      "Benchmarks (`bun run bench:lib`)",
+      "Benchmark it yourself",
+      "Stress test page"
+    ],
+    "excerpt": "Performance and Large Datasets\n\nngx-sidenav is built to keep the main thread free while it loads, indexes and searches large menus: 100k menu...",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Performance and Large Datasets",
+        "route": "content/guides/performance"
+      }
+    ]
+  },
+  {
+    "label": "Programmatic Service",
+    "description": "",
+    "route": "content/guides/programmatic-service",
+    "tags": [],
+    "headings": ["Push and pop levels", "Restore the stack", "State signals"],
+    "excerpt": " (provided in root) owns the stack, the width and the expanded state.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Programmatic Service",
+        "route": "content/guides/programmatic-service"
+      }
+    ]
+  },
+  {
+    "label": "Search Index",
+    "description": "Add a ranked, keyboard-friendly search box backed by search-index.json with withSearchIndex.",
+    "route": "content/guides/search-index",
+    "tags": ["guides", "search"],
+    "headings": [
+      "Enable search",
+      "Options",
+      "Indexing and large indexes",
+      "Ranking",
+      "Heading anchors",
+      "External results",
+      "Programmatic use"
+    ],
+    "excerpt": "or anywhere else with (Ctrl+K / Cmd+K focuses it).",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Search Index",
+        "route": "content/guides/search-index"
+      }
+    ]
+  },
+  {
+    "label": "Theming",
+    "description": "Light and dark defaults, and CSS custom properties to restyle the sidenav, its search box, toggle, resize handle and badges.",
+    "route": "content/guides/theming",
+    "tags": ["guides", "theming"],
+    "headings": ["Light and dark", "Custom colors", "Main variables", "Badges"],
+    "excerpt": "The sidenav, its menu and its search box ship light and dark defaults; their text meets WCAG AA (4.5:1) in both.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Theming",
+        "route": "content/guides/theming"
+      }
+    ]
+  },
+  {
+    "label": "Web Worker Search",
+    "description": "Build and scan large search indexes off the main thread with the ngx-sidenav/worker entry point, with a transparent fallback to the main thread.",
+    "route": "content/guides/web-worker",
+    "tags": ["guides", "search", "performance"],
+    "headings": [
+      "1. Create the worker file",
+      "2. Pass the factory to `withSearchIndex()`",
+      "What runs where",
+      "Fallback",
+      "The protocol",
+      "Trade-offs"
+    ],
+    "excerpt": "By default, a large search index is built and scanned on the main thread, in small chunks that yield to the browser.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Web Worker Search",
+        "route": "content/guides/web-worker"
+      }
+    ]
+  },
+  {
+    "label": "From 20 to 22",
+    "description": "Breaking changes and new features when upgrading @fsegurai/ngx-sidenav from 20.x to 22.x.",
+    "route": "content/migration/20-to-22",
+    "tags": ["migration"],
+    "headings": ["Requirements", "Breaking changes", "New features", "Steps"],
+    "excerpt": "From 20 to 22\n\nRequirements\n\nAngular 22: , and .\n, and ( ) are now declared peers: install them if they\n were only transitive before.\n\nBreaking...",
+    "breadcrumb": [
+      {
+        "label": "Migration",
+        "route": "content/migration"
+      },
+      {
+        "label": "From 20 to 22",
+        "route": "content/migration/20-to-22"
+      }
+    ]
+  },
+  {
+    "label": "Migration",
+    "description": "Upgrade notes between major versions of @fsegurai/ngx-sidenav.",
+    "route": "content/migration/README",
+    "tags": ["migration", "overview"],
+    "excerpt": "Migration\n\n20.x to 22.x: Angular 22, new peers, corrected events and the manifest and search features.",
+    "breadcrumb": [
+      {
+        "label": "Migration",
+        "route": "content/migration"
+      },
+      {
+        "label": "Migration",
+        "route": "content/migration/README"
+      }
+    ]
+  }
+]

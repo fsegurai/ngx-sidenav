@@ -1,0 +1,33 @@
+<div class="layout">
+  <div class="layout-content">
+    <ng-content />
+    <div class="footer">
+      <mat-divider />
+      <markdown class="footer-text" [emoji]="true">
+        Made with :heart: by **fsegurai** <span style="margin:0 .15em;">•</span> Follow on
+        [GitHub](https://github.com/fsegurai)
+      </markdown>
+    </div>
+    @if (displayTOC() && showScrollUpButton()) {
+      <button (click)="onScrollUp()" animate.enter="zoom-enter" animate.leave="zoom-leave" class="scrollup-button--fixed hide-gt-sm"
+              color="accent" mat-fab type="button" aria-label="Scroll to top">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"/>
+        </svg>
+      </button>
+    }
+  </div>
+  @if (displayTOC()) {
+    <div class="layout-toc sticky">
+      <app-scrollspy-nav [headings]="headings()" />
+      @if (showScrollUpButton()) {
+        <button (click)="onScrollUp()" animate.enter="zoom-enter" animate.leave="zoom-leave" class="scrollup-button" color="accent"
+                mat-mini-fab type="button" aria-label="Scroll to top">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"/>
+          </svg>
+        </button>
+      }
+    </div>
+  }
+</div>

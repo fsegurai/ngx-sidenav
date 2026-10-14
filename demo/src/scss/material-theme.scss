@@ -1,0 +1,168 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use './media-queries' as mq;
+
+@use './typography' as typography;
+@use './utils' as utils;
+
+@use './themes/light-theme' as light-theme;
+@use './themes/dark-theme' as dark-theme;
+
+@use './components/app.theme' as app-component;
+@use './components/scrollspy-nav.theme' as scrollspy-nav-component;
+
+@mixin responsive-native-elements {
+  blockquote {
+    @include mq.for-phone-only {
+      margin: 12px 0;
+      padding: 1px 10px;
+      font-size: 0.95em;
+    }
+    @include mq.for-tablet {
+      margin: 16px 0;
+      padding: 1px 16px;
+      font-size: 1em;
+    }
+    @include mq.for-desktop-up {
+      margin: 20px 0;
+      padding: 1px 20px;
+      font-size: 1.05em;
+    }
+  }
+  code:not([class*="language-"]) {
+    @include mq.for-phone-only {
+      font-size: 0.85em;
+      padding: 0 3px 1px;
+    }
+    @include mq.for-tablet {
+      font-size: 0.92em;
+      padding: 0 5px 2px;
+    }
+    @include mq.for-desktop-up {
+      font-size: 0.94em;
+      padding: 0 6px 2px;
+    }
+  }
+}
+
+@mixin native-element-theme($palette, $theme-name) {
+  $color-config: mat.m2-get-color-config($palette);
+
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+  $foreground-palette: map.get($color-config, 'foreground');
+
+  // General CSS variables for Components (shared palette between themes)
+  :host, & {
+    // --- SIDENAV ---
+    --ngx-sidenav-container-background-color: transparent;
+    --ngx-sidenav-link-item-parent-background-color: transparent;
+    --ngx-sidenav-link-item-parent-text-color: #{mat.m2-get-color-from-palette($foreground-palette, 'base')};
+    --ngx-sidenav-link-item-text-color: #{mat.m2-get-color-from-palette($foreground-palette, 'base')};
+    --ngx-sidenav-link-item-border-left-color: #{mat.m2-get-color-from-palette($foreground-palette, 'divider')};
+
+    // --- SIDENAV CONTENT SCROLLBAR ---
+    --ngx-sidenav-content-background-color: #{mat.m2-get-color-from-palette($foreground-palette, 'disabled')};
+    --ngx-sidenav-content-background-color-hover: #{mat.m2-get-color-from-palette($foreground-palette, 'secondary-text')};
+
+    // --- SIDENAV TOGGLE ---
+    --ngx-sidenav-toggle-border-color: #{mat.m2-get-color-from-palette($foreground-palette, 'divider')};
+
+    // --- SIDENAV RESIZE HANDLE ---
+    --ngx-sidenav-resize-handle-indicator-line-background-color: #{mat.m2-get-color-from-palette($foreground-palette, 'divider')};
+    --ngx-sidenav-resize-handle-icon-indicator-line-border-color: #{mat.m2-get-color-from-palette($foreground-palette, 'divider')};
+    --ngx-sidenav-resize-handle-icon-indicator-line-color: #{mat.m2-get-color-from-palette($foreground-palette, 'text')};
+  }
+
+  // Apply styles to all <a> elements except sidenav links (ngx-sidenav-link) and opted-out links
+  a:not([class*="mat-"]):not(.docs-ignore-link-styling):not(.ngx-sidenav-link) {
+    color: mat.m2-get-color-from-palette($accent-palette, A400);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus,
+    &:visited {
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: mat.m2-get-color-from-palette($accent-palette, A400);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-ring-width) solid var(--focus-ring);
+      outline-offset: var(--focus-ring-offset);
+    }
+  }
+
+  blockquote {
+    background: mat.m2-get-color-from-palette($primary-palette, 300, 0.14);
+    border-left: 4px solid mat.m2-get-color-from-palette($accent-palette, 'default');
+    border-radius: 4px;
+    color: utils.soften-color(mat.m2-get-color-from-palette($foreground-palette, 'base'), 40%);
+    margin: 20px 0;
+    padding: 1px 20px;
+  }
+
+  code:not([class*="language-"]) {
+    background: mat.m2-get-color-from-palette($foreground-palette, 'secondary-text', 0.07);
+    border-radius: 3px;
+    font-size: 0.94em;
+    padding: 0 6px 2px;
+    overflow-wrap: break-word;
+  }
+
+  hr {
+    border-color: mat.m2-get-color-from-palette($foreground-palette, 'divider');
+    border-style: solid;
+    border-width: 1px 0 0 0;
+  }
+
+  table {
+    th {
+      color: mat.m2-get-color-from-palette($foreground-palette, 'secondary-text');
+    }
+
+    td,
+    th {
+      border-bottom-color: mat.m2-get-color-from-palette($foreground-palette, 'divider');
+    }
+  }
+
+  @include responsive-native-elements;
+}
+
+@mixin material-element-themes($palette) {
+  @include mat.all-component-colors($palette);
+  @include mat.all-component-bases($palette);
+}
+
+@mixin app-component-themes($palette) {
+  @include app-component.theme($palette);
+  @include scrollspy-nav-component.theme($palette);
+}
+
+@mixin theme($palette, $theme-name) {
+  .#{$theme-name}-theme {
+    @include native-element-theme($palette, $theme-name);
+    @include material-element-themes($palette);
+    @include app-component-themes($palette);
+  }
+}
+
+// common theme styling
+@include typography.typography-styles;
+
+// Include typography once
+@include mat.all-component-typographies(light-theme.$theme);
+// Include density styles once
+@include mat.all-component-densities(light-theme.$theme);
+
+// material core
+@include mat.elevation-classes();
+@include mat.app-background();
+
+// themes
+@include theme(light-theme.$theme, 'light');
+@include theme(dark-theme.$theme, 'dark');

@@ -1,0 +1,40 @@
+// Responsive breakpoints of the demo.
+$screen-xs: 700px;
+$screen-md: 960px;
+$screen-lg: 1200px;
+
+@mixin for-phone-only {
+  @media (max-width: $screen-xs) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: calc($screen-xs + 0.01px)) and (max-width: calc($screen-md - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: calc($screen-lg + 0.01px)) {
+    @content;
+  }
+}
+
+@mixin gt-xs {
+  @media (min-width: calc($screen-xs + 0.01px)) {
+    @content;
+  }
+}
+
+@mixin lt-md {
+  @media (max-width: calc($screen-md - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin gt-sm {
+  @media (min-width: $screen-md) {
+    @content;
+  }
+}

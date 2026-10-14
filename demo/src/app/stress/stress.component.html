@@ -1,0 +1,104 @@
+<h1>Stress test</h1>
+<p>
+  Generates a large menu and search index in the browser (seeded, always the same data) and measures how the sidenav
+  copes. The generated menu replaces the sidenav menu while this page is open. Open the browser Performance panel to
+  look for long tasks while loading and typing.
+</p>
+
+<section aria-labelledby="stress-menu-title">
+  <h2 id="stress-menu-title">Menu</h2>
+  <div class="stress-controls">
+    <label>
+      Items
+      <select name="items" (change)="selectNumber($event.target, itemCount)">
+        @for (option of itemOptions; track option) {
+          <option [value]="option" [selected]="option === itemCount()">{{ option.toLocaleString('en') }}</option>
+        }
+      </select>
+    </label>
+    <label>
+      Depth
+      <select name="depth" (change)="selectNumber($event.target, depth)">
+        @for (option of depthOptions; track option) {
+          <option [value]="option" [selected]="option === depth()">{{ option }}</option>
+        }
+      </select>
+    </label>
+    <button type="button" mat-flat-button (click)="loadMenu()">Load menu</button>
+  </div>
+
+  @if (menuStats(); as stats) {
+    <dl class="stress-stats" aria-live="polite">
+      <dt>Items</dt>
+      <dd data-stat="menu-items">{{ stats.items.toLocaleString('en') }} (depth {{ stats.depth }})</dd>
+      <dt>Generate</dt>
+      <dd>{{ ms(stats.generateMs) }}</dd>
+      <dt>Map (lazy, root level)</dt>
+      <dd>{{ ms(stats.mapMs) }}</dd>
+      <dt>Mapped → first root row rendered</dt>
+      <dd data-stat="first-menu">{{ ms(stats.firstMenuMs) }}</dd>
+      <dt>Mapped → route index ready</dt>
+      <dd data-stat="index-ready-menu">{{ ms(stats.indexReadyMs) }}</dd>
+    </dl>
+  }
+</section>
+
+<section aria-labelledby="stress-search-title">
+  <h2 id="stress-search-title">Search</h2>
+  <div class="stress-controls">
+    <label>
+      Entries
+      <select name="entries" (change)="selectNumber($event.target, indexSize)">
+        @for (option of indexOptions; track option) {
+          <option [value]="option" [selected]="option === indexSize()">{{ option.toLocaleString('en') }}</option>
+        }
+      </select>
+    </label>
+    <label>
+      <input type="checkbox" name="worker" [checked]="useWorker()" (change)="useWorker.set($any($event.target).checked)"/>
+      Use the Web Worker
+    </label>
+    <button type="button" mat-flat-button (click)="buildSearchIndex()">Build index</button>
+  </div>
+  @if (!workerSupported) {
+    <p class="stress-note" data-stat="worker-unavailable">
+      Web Workers are not available here: the index is built and searched on the main thread, in chunks.
+    </p>
+  }
+
+  @if (searchStats(); as stats) {
+    <dl class="stress-stats" aria-live="polite">
+      <dt>Entries</dt>
+      <dd>{{ stats.entries.toLocaleString('en') }}</dd>
+      <dt>Runs in</dt>
+      <dd data-stat="search-thread">{{ stats.worker ? 'Web Worker' : 'main thread' }}</dd>
+      <dt>Index ready</dt>
+      <dd data-stat="index-ready">{{ ms(stats.indexReadyMs) }}</dd>
+      <dt>Last query</dt>
+      <dd data-stat="query-latency">{{ queryLatency() === null ? '–' : ms(queryLatency()!) }}</dd>
+    </dl>
+
+    <label class="stress-query">
+      Query
+      <input #queryInput type="search" name="query" autocomplete="off" placeholder="alpha gamma" (input)="onQuery($any($event.target).value)"/>
+    </label>
+    <ol class="stress-results" aria-label="Top results">
+      @for (result of topResults(); track result.entry.route) {
+        <li>{{ result.entry.label }}</li>
+      }
+    </ol>
+  }
+</section>
+
+<section aria-labelledby="stress-long-tasks-title">
+  <h2 id="stress-long-tasks-title">Long tasks</h2>
+  @if (longTasks(); as tasks) {
+    <p aria-live="polite">
+      <span data-stat="long-tasks">{{ tasks.count }}</span> long tasks (over 50 ms) since the page opened, {{ ms(tasks.totalMs) }} in
+      total.
+      <button type="button" mat-button (click)="resetLongTasks()">Reset</button>
+    </p>
+  } @else {
+    <p data-stat="long-tasks-unsupported">This browser does not report long tasks: use the Performance panel instead.</p>
+  }
+</section>

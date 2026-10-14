@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a class="lib-title docs-ignore-link-styling" href="/docs" routerLink="/docs">
+      <svg class="lib-logo" aria-hidden="true" focusable="false" viewBox="0 0 250 250" width="32" height="32"
+           xmlns="http://www.w3.org/2000/svg">
+        <path d="M125 30 31.9 63.2l14.2 123.1L125 230l78.9-43.7 14.2-123.1z" fill="none" stroke="currentColor"
+              stroke-width="14" stroke-linejoin="round"/>
+        <g transform="translate(55, 55) scale(6)" fill="currentColor">
+          <path d="M3 18h13v-2H3z"/>
+          <path d="M3 13h10v-2H3z"/>
+          <path d="M3 6v2h13V6z"/>
+          <path d="M21 15.59L17.42 12 21 8.41 19.59 7l-5 5 5 5z"/>
+        </g>
+      </svg>
+      <span>&#64;fsegurai/ngx-sidenav</span>
+    </a>
+    <nav class="app-nav" aria-label="Demo pages">
+      <a mat-button href="/docs" routerLink="/docs" routerLinkActive="app-nav--active">Docs</a>
+      <a mat-button href="/render" routerLink="/render" routerLinkActive="app-nav--active">Theming</a>
+      <a mat-button href="/playground" routerLink="/playground" routerLinkActive="app-nav--active">Playground</a>
+      <a mat-button href="/settings/component/default-menu" routerLink="/settings/component/default-menu" routerLinkActive="app-nav--active">Stacking</a>
+      <a mat-button href="/stress" routerLink="/stress" routerLinkActive="app-nav--active">Stress</a>
+    </nav>
+    <span class="spacer"></span>
+    <button type="button" mat-icon-button (click)="toggleTheme()"
+            [attr.aria-label]="isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
+            [title]="isDark() ? 'Switch to light theme' : 'Switch to dark theme'">
+      <mat-icon aria-hidden="true" class="material-symbols-outlined">{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+    <button type="button" mat-icon-button (click)="toggleMenuSet()"
+            [attr.aria-label]="'Show the ' + nextMenuSet().name"
+            [title]="menuSet().name + ' (switch to ' + nextMenuSet().name + ')'">
+      <mat-icon aria-hidden="true" class="material-symbols-outlined">{{ menuSet().items ? 'data_object' : 'menu_book' }}</mat-icon>
+    </button>
+    <button type="button" mat-icon-button (click)="toggleMenuMode()"
+            [attr.aria-label]="menuFixed() ? 'Make the menu float' : 'Fix the menu'"
+            [title]="menuFixed() ? 'Fixed menu' : 'Floating menu'">
+      <mat-icon aria-hidden="true" class="material-symbols-outlined">{{ menuFixed() ? 'lock' : 'lock_open' }}</mat-icon>
+    </button>
+    <a href="https://github.com/fsegurai/ngx-sidenav" mat-icon-button title="GitHub repository">
+      <span class="visually-hidden">GitHub repository</span>
+      <svg class="github-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24"
+           xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/>
+      </svg>
+    </a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="app-layout" [class.menu-fixed]="menuFixed()">
+  <ngx-sidenav class="menu-column" [items]="sidenavItems()" [search]="true"/>
+
+  <main class="main-column">
+    <div class="content-area">
+      <div class="route-container">
+        <router-outlet/>
+      </div>
+    </div>
+  </main>
+</div>

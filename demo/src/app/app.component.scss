@@ -1,0 +1,247 @@
+@use '@angular/material' as mat;
+@use '../scss/media-queries' as mq;
+
+// variables
+$viewport-max-width: 960px;
+$viewport-offset-x: 16px;
+
+// mixins
+@mixin viewport-width($padding: true) {
+  margin: 0 auto;
+  max-width: $viewport-max-width;
+
+  @if ($padding) {
+    padding-left: $viewport-offset-x;
+    padding-right: $viewport-offset-x;
+  }
+}
+
+// style
+:host {
+  display: block;
+}
+
+.lib-title {
+  // Follows the toolbar text color (the primary contrast color); the logo paints with currentColor.
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  font-size: 20px;
+  font-weight: bold;
+  gap: 8px;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: var(--focus-ring-width, 2px) solid currentColor;
+    outline-offset: 4px;
+  }
+}
+
+.lib-logo {
+  flex: 0 0 auto;
+}
+
+.app-nav {
+  display: flex;
+  gap: 4px;
+  margin-left: 24px;
+
+  a {
+    color: inherit;
+    opacity: 0.75;
+  }
+
+  .app-nav--active {
+    opacity: 1;
+  }
+
+  @include mq.for-phone-only {
+    display: none;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.github-icon {
+  display: block;
+  margin: auto;
+}
+
+.mat-toolbar ::ng-deep {
+
+  .mat-toolbar-row {
+    @include viewport-width();
+  }
+
+  .mat-icon-button {
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.outlet-wrapper {
+  @include viewport-width();
+  display: block;
+  margin-top: $viewport-offset-x;
+  margin-bottom: $viewport-offset-x;
+  position: relative;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+
+  @include mq.for-phone-only {
+    flex-direction: column;
+    min-height: unset;
+  }
+}
+
+.sidenav-wrapper {
+  flex: 0 0 auto;
+  /* Remove fixed width/min-width/max-width to allow resizing */
+  display: flex;
+  flex-direction: column;
+  /* Let the resizable component control width */
+  @include mq.for-phone-only {
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    order: 1;
+  }
+}
+
+.main-content {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 2rem 2rem 2rem 2rem;
+
+  @include mq.for-phone-only {
+    padding: 1rem 0.5rem;
+    max-width: 100vw;
+    order: 2;
+  }
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: 'menu main';
+  min-height: 100vh;
+  transition: grid-template-columns 0.3s;
+
+  &.menu-fixed {
+    .menu-column {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      z-index: 20;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+      background: var(--mat-sidenav-background);
+    }
+  }
+
+  @include mq.for-phone-only {
+    display: block;
+    .menu-column {
+      position: static;
+      width: 100%;
+      min-width: 0;
+      max-width: 100vw;
+      box-shadow: none;
+      height: auto;
+    }
+    .main-column {
+      width: 100%;
+      max-width: 100vw;
+    }
+  }
+}
+
+.menu-column {
+  grid-area: menu;
+  transition: box-shadow 0.3s;
+  background: var(--mat-sidenav-background);
+  @include mq.for-phone-only {
+    min-width: 0;
+    max-width: 100vw;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+.main-column {
+  grid-area: main;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-width: 0;
+  @include mq.for-phone-only {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.content-area {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 2rem 2rem 2rem 2rem;
+  @include mq.for-phone-only {
+    padding: 1rem 0.5rem;
+    max-width: 100vw;
+    order: 2;
+  }
+}
+
+.route-container {
+  animation: routeEnter 550ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+@keyframes routeEnter {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Optional: Add this if you want exit animation
+.route-container.leaving {
+  animation: routeLeave 550ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+@keyframes routeLeave {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+}
