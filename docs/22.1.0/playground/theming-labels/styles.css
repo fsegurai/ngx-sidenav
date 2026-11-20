@@ -1,0 +1,151 @@
+/* The preview gives the page its theme (--pg-* variables, body colors and font); the layout fills it. */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* The sidenav controls its own width (collapsed or resized), so a flex row is enough. */
+.layout {
+  display: flex;
+  height: 100vh;
+  background: var(--pg-bg);
+  color: var(--pg-text);
+}
+
+/* A right-positioned sidenav goes after the content. */
+.layout.right {
+  flex-direction: row-reverse;
+}
+
+.layout main {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: auto;
+  padding: 24px 32px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+}
+
+.route {
+  margin: 0 0 24px;
+  color: var(--pg-text-muted);
+}
+
+/*
+ * The light/dark switch sets [data-theme] on <html>, which the sidenav reads. The --pg-* variables only hold the
+ * preview scheme, so on the other scheme the page uses the system colors of that scheme and the sidenav its own
+ * built-in light/dark defaults.
+ */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+.layout:not(.app-theme) {
+  --pg-bg: Canvas;
+  --pg-surface: Canvas;
+  --pg-text: CanvasText;
+  --pg-text-muted: color-mix(in srgb, CanvasText 75%, Canvas);
+  --pg-border: color-mix(in srgb, CanvasText 30%, Canvas);
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  max-width: 560px;
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border: 1px solid var(--pg-border);
+  border-radius: var(--pg-radius);
+  background: var(--pg-surface);
+}
+
+legend {
+  padding: 0 6px;
+  font-weight: 600;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--pg-primary);
+}
+
+/*
+ * The sidenav follows the preview theme: it reads [data-theme] on <html> for its light/dark scheme (set
+ * --ngx-sidenav-color-scheme instead when no ancestor carries it), and its colors are the --pg-* variables.
+ */
+.layout.app-theme {
+  --ngx-sidenav-container-background-color: var(--pg-surface);
+  --ngx-sidenav-text-color: var(--pg-text);
+  --ngx-sidenav-link-item-text-color: var(--pg-text);
+  --ngx-sidenav-link-item-text-color-hover: var(--pg-text);
+  --ngx-sidenav-link-item-background-color-hover: color-mix(in srgb, var(--pg-primary) 10%, transparent);
+  --ngx-sidenav-link-item-border-left-color: var(--pg-border);
+  --ngx-sidenav-link-item-border-left-color-hover: var(--pg-primary);
+  --ngx-sidenav-link-item-text-color-active: var(--pg-primary);
+  --ngx-sidenav-link-item-background-color-active: color-mix(in srgb, var(--pg-primary) 16%, transparent);
+  --ngx-sidenav-link-item-border-left-color-active: var(--pg-primary);
+  --ngx-sidenav-link-item-title-text-color: var(--pg-text-muted);
+  --ngx-sidenav-link-item-parent-text-color: var(--pg-text);
+  --ngx-sidenav-menu-back-background-color: var(--pg-surface-alt);
+  --badge-function: var(--pg-accent);
+  --ngx-sidenav-scrollbar-thumb-color: var(--pg-border);
+  --ngx-sidenav-scrollbar-thumb-color-hover: var(--pg-text-muted);
+  --ngx-sidenav-toggle-background-color: var(--pg-surface-alt);
+  --ngx-sidenav-toggle-background-color-hover: color-mix(in srgb, var(--pg-primary) 18%, var(--pg-surface-alt));
+  --ngx-sidenav-toggle-border-color: var(--pg-border);
+  --ngx-sidenav-toggle-border-color-hover: var(--pg-primary);
+  --ngx-sidenav-toggle-icon-color: var(--pg-primary);
+  --ngx-sidenav-resize-handle-indicator-background-color: var(--pg-primary);
+  --ngx-sidenav-resize-handle-indicator-background-color-hover: var(--pg-primary);
+  --ngx-sidenav-resize-handle-indicator-line-background-color: var(--pg-border);
+  --ngx-sidenav-focus-ring: var(--pg-primary);
+  --ngx-sidenav-search-input-background-color: var(--pg-bg);
+  --ngx-sidenav-search-input-text-color: var(--pg-text);
+  --ngx-sidenav-search-input-placeholder-color: var(--pg-text-muted);
+  --ngx-sidenav-search-input-border-color: var(--pg-border);
+  --ngx-sidenav-search-input-border-color-hover: var(--pg-primary);
+  --ngx-sidenav-search-icon-color: var(--pg-text-muted);
+  --ngx-sidenav-search-listbox-background-color: var(--pg-surface);
+  --ngx-sidenav-search-listbox-border-color: var(--pg-border);
+  --ngx-sidenav-search-option-text-color: var(--pg-text);
+  --ngx-sidenav-search-option-background-color-hover: color-mix(in srgb, var(--pg-primary) 10%, transparent);
+  --ngx-sidenav-search-option-background-color-active: color-mix(in srgb, var(--pg-primary) 16%, transparent);
+  --ngx-sidenav-search-meta-text-color: var(--pg-text-muted);
+  --ngx-sidenav-search-excerpt-text-color: var(--pg-text-muted);
+  --ngx-sidenav-search-mark-background-color: color-mix(in srgb, var(--pg-accent) 30%, transparent);
+  --ngx-sidenav-search-mark-text-color: var(--pg-text);
+}
+
+/*
+ * A custom theme: every sidenav color is a CSS custom property, so a theme is a set of variables on any ancestor.
+ * Keep 4.5:1 contrast between each text color and its background.
+ */
+.ocean {
+  --ngx-sidenav-container-background-color: #0b2a3c;
+  --ngx-sidenav-scrollbar-thumb-color: #1e5a7a;
+  --ngx-sidenav-text-color: #e0f2fe;
+  --ngx-sidenav-link-item-text-color: #bae6fd;
+  --ngx-sidenav-link-item-text-color-hover: #ffffff;
+  --ngx-sidenav-link-item-background-color-hover: #12405a;
+  --ngx-sidenav-link-item-text-color-active: #5eead4;
+  --ngx-sidenav-link-item-border-left-color-active: #5eead4;
+  --ngx-sidenav-toggle-background-color: #0b2a3c;
+  --ngx-sidenav-toggle-icon-color: #5eead4;
+  --ngx-sidenav-toggle-border-color: #1e5a7a;
+  --ngx-sidenav-focus-ring: #5eead4;
+}

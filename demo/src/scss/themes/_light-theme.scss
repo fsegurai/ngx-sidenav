@@ -1,0 +1,121 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../typography' as typography;
+
+$dark-text: map.get(mat.$m2-light-theme-foreground-palette, text);
+$light-text: map.get(mat.$m2-dark-theme-foreground-palette, text);
+
+$light-primary-palette: (
+        50 : #f9f2f9,
+        100 : #f2e4f1,
+        200 : #e5c9e3,
+        300 : #d4a0d1,
+        400 : #c366be,
+        500 : #ab29a3,
+        600 : #96278d,
+        700 : #852987,
+        800 : #5f2c72,
+        900 : #4a2159,
+        A100 : #f2e4f1,
+        A200 : #d4a0d1,
+        A400 : #b929b0,
+        A700 : #852987,
+        A800: #212121,
+        contrast: (
+                50 : $dark-text,
+                100 : $dark-text,
+                200 : $dark-text,
+                300 : $dark-text,
+                400 : $light-text,
+                500 : $light-text,
+                600 : $light-text,
+                700 : $light-text,
+                800 : $light-text,
+                900 : $light-text,
+                A100 : $dark-text,
+                A200 : $dark-text,
+                A400 : $light-text,
+                A700 : $light-text,
+        )
+);
+
+$light-primary: mat.m2-define-palette($light-primary-palette, 500, 300, 700);
+$light-accent: mat.m2-define-palette($light-primary-palette, A400, 200, 800);
+$light-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$theme: mat.m2-define-light-theme((
+        color: (
+                primary: $light-primary,
+                accent: $light-accent,
+                warn: $light-warn,
+        ),
+        typography: typography.$mat-typography-config,
+        density: 0,
+));
+
+.light-theme {
+  :host, & {
+    // --- SIDENAV ---
+    --ngx-sidenav-link-item-text-color-hover: #{mat.m2-get-color-from-palette($light-primary-palette, A400)};
+    --ngx-sidenav-link-item-text-color-active: #{mat.m2-get-color-from-palette($light-primary-palette, 700)};
+    --ngx-sidenav-link-item-border-left-color-hover: #{mat.m2-get-color-from-palette($light-primary-palette, A400)};
+    --ngx-sidenav-link-item-border-left-color-active: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --ngx-sidenav-link-item-background-color-hover: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 50), 0.6)};
+    --ngx-sidenav-link-item-background-color-active: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 100), 0.4)};
+    --ngx-sidenav-link-item-box-shadow-color-hover: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 500), 0.1)};
+    --ngx-sidenav-link-item-box-shadow-color-active: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 600), 0.15)};
+    --ngx-sidenav-link-item-outline-color-hover: transparent;
+    //--ngx-sidenav-link-item-outline-color-active: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 400), 0.3)};
+
+    // --- SIDENAV TOGGLE ---
+    --ngx-sidenav-toggle-background-color: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 50), 1)};
+    --ngx-sidenav-toggle-background-color-hover: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 100), 1)};
+    --ngx-sidenav-toggle-border-color-hover: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --ngx-sidenav-toggle-outline-color: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --ngx-sidenav-toggle-icon-color: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+
+    // --- SIDENAV RESIZE HANDLE ---
+    --ngx-sidenav-resize-handle-icon-outline-color: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --ngx-sidenav-resize-handle-indicator-background-color: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --ngx-sidenav-resize-handle-indicator-background-color-hover: #{mat.m2-get-color-from-palette($light-primary-palette, 700)};
+    --ngx-sidenav-resize-handle-icon-indicator-background-color: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --ngx-sidenav-resize-handle-icon-indicator-border-color: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --ngx-sidenav-resize-handle-icon-indicator-color: #{map.get(map.get($light-primary-palette, contrast), 600)};
+    --ngx-sidenav-resize-handle-icon-indicator-background-color-hover: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 100), 1)};
+    --ngx-sidenav-resize-handle-icon-indicator-border-color-hover: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --ngx-sidenav-resize-handle-icon-indicator-color-hover: #{mat.m2-get-color-from-palette($light-primary-palette, 800)};
+    --ngx-sidenav-resize-handle-icon-indicator-line-background-color: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 50), 0.9)};
+
+    // --- SIDENAV SEARCH (the other search colors are the light/dark defaults of the library) ---
+    --ngx-sidenav-focus-ring: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --ngx-sidenav-search-option-background-color-active: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 100), 0.6)};
+
+    // --- SIDENAV BADGES ---
+    --badge-class: #ab29a3;
+    --badge-constant: #616161;
+    --badge-decorator: #5f2c72;
+    --badge-directive: #b929b0;
+    --badge-element: #c57600;
+    --badge-enum: #d99b00;
+    --badge-function: #4caf50;
+    --badge-interface: #852987;
+    --badge-pipe: #96278d;
+    --badge-impure-pipe: #b929b0;
+    --badge-module: #795548;
+    --badge-alias: #a2b300;
+    --badge-block: #ab29a3;
+    --badge-deprecated: #f44336;
+    --badge-custom: #000000;
+
+    // DOCS COMPONENTS
+    // --- TOC ---
+    --docs-toc-item-color: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, A800), 1)};
+    --docs-toc-item-border: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, A800), 0.5)};
+    --docs-toc-item-bg-hover: #{rgba(mat.m2-get-color-from-palette($light-primary-palette, 100), 0.2)};
+    --docs-toc-scroll-to-top-color: #{rgba(mat.m2-get-color-from-palette($light-primary, A800), 0.9)};
+    --docs-toc-item-color-active: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --docs-toc-item-color-active-outline: #{mat.m2-get-color-from-palette($light-primary-palette, 400)};
+    --docs-toc-item-border-active: #{mat.m2-get-color-from-palette($light-primary-palette, 600)};
+    --docs-toc-scroll-to-top-color-hover: #{mat.m2-get-color-from-palette($light-primary-palette, 500)};
+  }
+}
