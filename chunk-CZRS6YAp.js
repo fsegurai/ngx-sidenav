@@ -1,4 +1,4 @@
-import{D as Fb,P as Iv,Pn as qa,St as U,en as gf,gn as lc,p as Df,x as E_}from"./chunk-usfLt4vf.js";import"./chunk-9dfYQhg0.js";import{m as Ic}from"./main-FVSOWX7Y.js";import{n as vt,t as ot}from"./chunk-COWpTqC1.js";var o=class s{constructor(){this.headings=U([])}onHeadings(n){this.headings.set(vt(n,[1,2]))}static{this.ɵfac=function(e){return new(e||s)}}static{this.ɵcmp=gf({type:s,selectors:[[`app-playground`]],decls:3,vars:2,consts:[[3,`headings`],[3,`headings`,`headingIds`]],template:function(e,a){e&1&&(qa(0,`app-scrollspy-nav-layout`,0)(1,`ngx-markdown`,1),lc(`headings`,function(f){return a.onHeadings(f)}),E_(2,`
+import{n as st,t as ft}from"./chunk-wfur8bbk.js";import{A as Ha,D as E_,G as U,H as Sv,St as wf,T as Bb,et as ac,g as jd,xt as vf}from"./main-EKQCP6W2.js";var o=class s{constructor(){this.headings=U([])}onHeadings(n){this.headings.set(ft(n,[1,2]))}static{this.ɵfac=function(e){return new(e||s)}}static{this.ɵcmp=vf({type:s,selectors:[[`app-playground`]],decls:3,vars:2,consts:[[3,`headings`],[3,`headings`,`headingIds`]],template:function(e,a){e&1&&(Ha(0,`app-scrollspy-nav-layout`,0)(1,`ngx-markdown`,1),ac(`headings`,function(f){return a.onHeadings(f)}),E_(2,`
     # \u{1F3A2} Playground
 
     Welcome to the playground! Scroll around and watch the navigation glow like a disco floor on a Saturday night.
@@ -161,4 +161,4 @@ import{D as Fb,P as Iv,Pn as qa,St as U,en as gf,gn as lc,p as Df,x as E_}from".
 
     - Nested sections show how parent highlighting works.
     - Long sections test offset and bottom-of-page logic.
-  `),Df()()),e&2&&(Iv(`headings`,a.headings()),Fb(),Iv(`headingIds`,!0))},dependencies:[Ic,ot],encapsulation:2})}};export{o as default};
+  `),wf()()),e&2&&(Sv(`headings`,a.headings()),Bb(),Sv(`headingIds`,!0))},dependencies:[jd,st],encapsulation:2})}};export{o as default};
