@@ -1,0 +1,615 @@
+[
+  {
+    "label": "Documentation Home",
+    "description": "Documentation for @fsegurai/ngx-sidenav 22.2.0, a resizable, stack-based Angular sidenav that renders manifest-generator navigation and search.",
+    "route": "content/README",
+    "tags": ["documentation", "overview", "angular"],
+    "headings": ["Quick path", "Sections", "Version"],
+    "excerpt": "@fsegurai/ngx-sidenav Docs\n\n is a resizable, collapsible Angular sidenav built on a navigation stack: every level you\nopen is pushed on the stack,...",
+    "breadcrumb": [
+      {
+        "label": "Home",
+        "route": "content/README"
+      }
+    ]
+  },
+  {
+    "label": "API Reference",
+    "description": "Components, services, providers and types exported by @fsegurai/ngx-sidenav.",
+    "route": "content/api/README",
+    "tags": ["api", "overview"],
+    "excerpt": "API Reference\n\n| Page | Exports |\n|------|---------|\n| Sidenav | ( ) |\n| Sidenav Menu | , |\n| Link Item | |\n| Sidenav Search | , , search types |\n|...",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "API",
+        "route": "content/api/README"
+      }
+    ]
+  },
+  {
+    "label": "Link Item",
+    "description": "The ngx-sidenav-link-item component used for every menu row.",
+    "route": "content/api/link-item",
+    "tags": ["api", "component"],
+    "excerpt": " renders one row as a link, a button or a title.",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Link Item",
+        "route": "content/api/link-item"
+      }
+    ]
+  },
+  {
+    "label": "Providers",
+    "description": "provideSidenav, withManifest, withSearchIndex (object or factory options), the default mappers, the manifest page helpers and the label providers.",
+    "route": "content/api/providers",
+    "tags": ["api", "providers"],
+    "headings": [
+      "provideSidenav(config?, ...features)",
+      "withManifest(options | () => options)",
+      "withSearchIndex(options | () => options)",
+      "Factory options",
+      "Manifest page helpers",
+      "Labels"
+    ],
+    "excerpt": "Providers\n\nprovideSidenav(config?, ...features)\n\n| Argument | Type |\n|----------|------|\n| | |\n| | , ; one of each at most. |\n\nwithManifest(options |...",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Providers",
+        "route": "content/api/providers"
+      }
+    ]
+  },
+  {
+    "label": "Sidenav Menu",
+    "description": "The ngx-sidenav-menu component and the StackMenuItem interface.",
+    "route": "content/api/sidenav-menu",
+    "tags": ["api", "component", "menu"],
+    "headings": ["Inputs", "StackMenuItem"],
+    "excerpt": " renders one menu level. uses it for the current level; you rarely need it alone.",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Sidenav Menu",
+        "route": "content/api/sidenav-menu"
+      }
+    ]
+  },
+  {
+    "label": "Sidenav Search",
+    "description": "The ngx-sidenav-search combobox, SidenavSearchService and the search types.",
+    "route": "content/api/sidenav-search",
+    "tags": ["api", "component", "search"],
+    "headings": ["`<ngx-sidenav-search>`", "SidenavSearchService", "Helpers"],
+    "excerpt": "| input | ( ) | Ctrl+K / Cmd+K focuses the box.",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Sidenav Search",
+        "route": "content/api/sidenav-search"
+      }
+    ]
+  },
+  {
+    "label": "Sidenav Service",
+    "description": "SidenavService methods and signals, and the stack item types.",
+    "route": "content/api/sidenav-service",
+    "tags": ["api", "service"],
+    "headings": ["Methods", "Signals", "Stack items"],
+    "excerpt": "Sidenav Service\n\n is provided in root.\n\nMethods\n\n| Method | Description |\n|--------|-------------|\n| | Pushes a or ; resolves after the animation....",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Sidenav Service",
+        "route": "content/api/sidenav-service"
+      }
+    ]
+  },
+  {
+    "label": "Sidenav",
+    "description": "Inputs and outputs of the ngx-sidenav component.",
+    "route": "content/api/sidenav",
+    "tags": ["api", "component"],
+    "headings": ["Inputs", "Outputs", "Content templates"],
+    "excerpt": "Sidenav\n\n : the resizable panel.\n\nInputs\n\n| Input | Type | Default | Description |\n|-------|------|---------|-------------|\n| | | | Root menu; falls...",
+    "breadcrumb": [
+      {
+        "label": "API",
+        "route": "content/api"
+      },
+      {
+        "label": "Sidenav",
+        "route": "content/api/sidenav"
+      }
+    ]
+  },
+  {
+    "label": "Getting Started",
+    "description": "Install @fsegurai/ngx-sidenav and render your first navigation menu.",
+    "route": "content/getting-started/README",
+    "tags": ["getting-started", "overview"],
+    "excerpt": "Two steps take you from zero to a working sidenav.",
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      },
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started/README"
+      }
+    ]
+  },
+  {
+    "label": "Installation",
+    "description": "Install @fsegurai/ngx-sidenav with its Angular peers; Angular Material is not required.",
+    "route": "content/getting-started/installation",
+    "tags": ["getting-started", "installation"],
+    "headings": ["Peer dependencies", "Icons", "Next step"],
+    "excerpt": "Installation\n\nInstall the library with your package manager:\n\n \n\nPeer dependencies\n\nThe package expects these Angular 22 packages in your...",
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      },
+      {
+        "label": "Installation",
+        "route": "content/getting-started/installation"
+      }
+    ]
+  },
+  {
+    "label": "Quick Start",
+    "description": "Render a resizable sidenav with nested menu items in a standalone, zoneless Angular application.",
+    "route": "content/getting-started/quick-start",
+    "tags": ["getting-started", "quick-start"],
+    "headings": ["1. Provide the router", "2. Render the sidenav", "3. Lay it out", "Next steps"],
+    "excerpt": "Quick Start\n\nProvide the router\n\nThe sidenav links are router links, so the application needs :\n\n \n\n is optional for a static menu; it becomes useful...",
+    "breadcrumb": [
+      {
+        "label": "Getting Started",
+        "route": "content/getting-started"
+      },
+      {
+        "label": "Quick Start",
+        "route": "content/getting-started/quick-start"
+      }
+    ]
+  },
+  {
+    "label": "Guides",
+    "description": "Task-oriented guides for menus, the stack service, manifests, search, responsive layout, theming, customization, menu composition, accessibility and labels.",
+    "route": "content/guides/README",
+    "tags": ["guides", "overview"],
+    "excerpt": "| Declarative Items | You define the menu as .",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Guides",
+        "route": "content/guides/README"
+      }
+    ]
+  },
+  {
+    "label": "Accessibility",
+    "description": "Keyboard support, ARIA roles and focus management of the sidenav, menu and search box.",
+    "route": "content/guides/accessibility",
+    "tags": ["guides", "accessibility"],
+    "headings": ["Panel", "Menu", "Rail", "Search"],
+    "excerpt": "The panel is a with an accessible name ( ).",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Accessibility",
+        "route": "content/guides/accessibility"
+      }
+    ]
+  },
+  {
+    "label": "Component Stacking",
+    "description": "Push your own Angular components as sidenav levels and pass them inputs with componentData.",
+    "route": "content/guides/component-stacking",
+    "tags": ["guides", "components"],
+    "headings": ["Lifecycle tip"],
+    "excerpt": "A level can be any standalone component.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Component Stacking",
+        "route": "content/guides/component-stacking"
+      }
+    ]
+  },
+  {
+    "label": "Custom Schemas",
+    "description": "Feed the sidenav and the search box from any navigation format with custom mapper functions.",
+    "route": "content/guides/custom-schemas",
+    "tags": ["guides", "manifest", "search"],
+    "excerpt": "Both features accept a that turns your raw data into the library types.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Custom Schemas",
+        "route": "content/guides/custom-schemas"
+      }
+    ]
+  },
+  {
+    "label": "Customization",
+    "description": "Bring your own icons, glyphs and styles with item icon templates, glyph templates, class hooks, icon sizes and the CDK tooltip.",
+    "route": "content/guides/customization",
+    "tags": ["guides", "customization", "theming"],
+    "headings": ["Item icons", "Glyphs", "Icon sizes", "Class hooks", "Tooltip"],
+    "excerpt": "Customization\n\nSince 22.1.0 the sidenav has no Angular Material dependency: every glyph is an inline SVG that follows\n , and every visual detail is...",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Customization",
+        "route": "content/guides/customization"
+      }
+    ]
+  },
+  {
+    "label": "Declarative Items",
+    "description": "Describe the menu as StackMenuItem objects: titles, parents, badges, tooltips, disabled, external and deprecated items.",
+    "route": "content/guides/declarative-items",
+    "tags": ["guides", "menu"],
+    "headings": ["Item kinds", "Optional properties", "Precedence"],
+    "excerpt": "Declarative Items\n\nBind an array of to . Whenever the array changes, the stack is rebuilt for the\ncurrent route.\n\nItem kinds\n\n| Shape | Renders as...",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Declarative Items",
+        "route": "content/guides/declarative-items"
+      }
+    ]
+  },
+  {
+    "label": "Labels and i18n",
+    "description": "Translate every text rendered or announced by the sidenav with provideSidenav labels or provideSidenavLabels.",
+    "route": "content/guides/i18n-labels",
+    "tags": ["guides", "i18n"],
+    "headings": ["Keys"],
+    "excerpt": "Every built-in text comes from the token, English by default.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Labels and i18n",
+        "route": "content/guides/i18n-labels"
+      }
+    ]
+  },
+  {
+    "label": "Lazy Levels and Resilient Sources",
+    "description": "Load menu levels on demand with loadChildren, split manifests with childrenSource, and keep data through failed reloads with retry and backoff.",
+    "route": "content/guides/lazy-levels",
+    "tags": ["guides", "lazy", "availability"],
+    "headings": [
+      "Lazy levels with `loadChildren`",
+      "Route sync and persisted levels",
+      "Split manifests with `childrenSource`",
+      "Resilient sources",
+      "Labels"
+    ],
+    "excerpt": "Large or remote menus do not need to be loaded at once.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Lazy Levels and Resilient Sources",
+        "route": "content/guides/lazy-levels"
+      }
+    ]
+  },
+  {
+    "label": "Manifest Generator",
+    "description": "Build the sidenav from the manifest.json produced by @fsegurai/manifest-generator with provideSidenav and withManifest.",
+    "route": "content/guides/manifest-generator",
+    "tags": ["guides", "manifest"],
+    "headings": [
+      "1. Write the pages",
+      "2. Generate",
+      "3. Provide the manifest",
+      "4. Render",
+      "5. Options that need `inject()`",
+      "6. Page helpers"
+    ],
+    "excerpt": "front-matter into (navigation) and (search). ngx-sidenav reads both natively.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Manifest Generator",
+        "route": "content/guides/manifest-generator"
+      }
+    ]
+  },
+  {
+    "label": "Menu Composition",
+    "description": "Header and footer slots, a row end template for custom badges, a collapsed icon rail, active-row scrolling and back-row context.",
+    "route": "content/guides/menu-composition",
+    "tags": ["guides", "customization", "22.2.0"],
+    "headings": ["Header and footer", "Row end", "Icon rail", "Active row and back-row context"],
+    "excerpt": "Since 22.2.0 the panel can carry more than the menu.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Menu Composition",
+        "route": "content/guides/menu-composition"
+      }
+    ]
+  },
+  {
+    "label": "Performance and Large Datasets",
+    "description": "How ngx-sidenav stays responsive with 100k menu items and 50k search entries, the recommended settings by dataset size, measured numbers and how to benchmark.",
+    "route": "content/guides/performance",
+    "tags": ["guides", "performance", "search"],
+    "headings": [
+      "How the library stays responsive",
+      "Recommended settings by dataset size",
+      "Measured numbers",
+      "Benchmarks (`bun run bench:lib`)",
+      "Benchmark it yourself",
+      "Stress test page"
+    ],
+    "excerpt": "Performance and Large Datasets\n\nngx-sidenav is built to keep the main thread free while it loads, indexes and searches large menus: 100k menu...",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Performance and Large Datasets",
+        "route": "content/guides/performance"
+      }
+    ]
+  },
+  {
+    "label": "Programmatic Service",
+    "description": "Drive the navigation stack from code with SidenavService: push, pop, restore and route sync.",
+    "route": "content/guides/programmatic-service",
+    "tags": ["guides", "service"],
+    "headings": ["Push and pop levels", "Restore the stack", "State signals"],
+    "excerpt": " (provided in root) owns the stack, the width and the expanded state.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Programmatic Service",
+        "route": "content/guides/programmatic-service"
+      }
+    ]
+  },
+  {
+    "label": "Responsive Layout",
+    "description": "Overlay the page on small screens with mode, handsetQuery and collapseOnNavigate.",
+    "route": "content/guides/responsive-layout",
+    "tags": ["guides", "layout", "responsive"],
+    "headings": ["Styling the overlay"],
+    "excerpt": "Responsive Layout\n\nSince 22.1.0 can sit next to the content, overlay the page, or switch between both with a media\nquery:\n\n \n\n| Input | Default |...",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Responsive Layout",
+        "route": "content/guides/responsive-layout"
+      }
+    ]
+  },
+  {
+    "label": "Search Index",
+    "description": "Add a ranked, keyboard-friendly search box backed by search-index.json with withSearchIndex.",
+    "route": "content/guides/search-index",
+    "tags": ["guides", "search"],
+    "headings": [
+      "Enable search",
+      "Options",
+      "Indexing and large indexes",
+      "Ranking",
+      "Heading anchors",
+      "External results",
+      "Programmatic use"
+    ],
+    "excerpt": "or anywhere else with (Ctrl+K / Cmd+K focuses it).",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Search Index",
+        "route": "content/guides/search-index"
+      }
+    ]
+  },
+  {
+    "label": "Theming",
+    "description": "Light and dark defaults, and CSS custom properties to restyle the sidenav, its search box, toggle, resize handle and badges.",
+    "route": "content/guides/theming",
+    "tags": ["guides", "theming"],
+    "headings": ["Light and dark", "Custom colors", "Main variables", "Badges"],
+    "excerpt": "The sidenav, its menu and its search box ship light and dark defaults; their text meets WCAG AA (4.5:1) in both.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Theming",
+        "route": "content/guides/theming"
+      }
+    ]
+  },
+  {
+    "label": "Web Worker Search",
+    "description": "Build and scan large search indexes off the main thread with the ngx-sidenav/worker entry point, with a transparent fallback to the main thread.",
+    "route": "content/guides/web-worker",
+    "tags": ["guides", "search", "performance"],
+    "headings": [
+      "1. Create the worker file",
+      "2. Pass the factory to `withSearchIndex()`",
+      "What runs where",
+      "Fallback",
+      "The protocol",
+      "Trade-offs"
+    ],
+    "excerpt": "By default, a large search index is built and scanned on the main thread, in small chunks that yield to the browser.",
+    "breadcrumb": [
+      {
+        "label": "Guides",
+        "route": "content/guides"
+      },
+      {
+        "label": "Web Worker Search",
+        "route": "content/guides/web-worker"
+      }
+    ]
+  },
+  {
+    "label": "From 20 to 22",
+    "description": "Breaking changes and new features when upgrading @fsegurai/ngx-sidenav from 20.x to 22.x.",
+    "route": "content/migration/20-to-22",
+    "tags": ["migration"],
+    "headings": ["Requirements", "Breaking changes", "New features", "Steps"],
+    "excerpt": "From 20 to 22\n\nRequirements\n\nAngular 22: , and .\nand ( ) are now declared peers: install them if they were only transitive\n before. (22.0.0 also...",
+    "breadcrumb": [
+      {
+        "label": "Migration",
+        "route": "content/migration"
+      },
+      {
+        "label": "From 20 to 22",
+        "route": "content/migration/20-to-22"
+      }
+    ]
+  },
+  {
+    "label": "From 22.0 to 22.1",
+    "description": "Angular Material is no longer required; the markup moves to inline SVG glyphs and a CDK tooltip, customizable through CSS variables, class hooks and templates.",
+    "route": "content/migration/22-0-to-22-1",
+    "tags": ["migration", "22.1.0"],
+    "headings": ["Requirements", "What changed", "Steps", "Customization in place of Material"],
+    "excerpt": "From 22.0 to 22.1\n\n⚠️ Breaking markup changes in a minor release. The library's major version follows Angular's, so removing\nAngular Material ships...",
+    "breadcrumb": [
+      {
+        "label": "Migration",
+        "route": "content/migration"
+      },
+      {
+        "label": "From 22.0 to 22.1",
+        "route": "content/migration/22-0-to-22-1"
+      }
+    ]
+  },
+  {
+    "label": "Migration",
+    "description": "Upgrade notes between major versions of @fsegurai/ngx-sidenav.",
+    "route": "content/migration/README",
+    "tags": ["migration", "overview"],
+    "excerpt": "Migration\n\n22.0 to 22.1: Angular Material removed, new markup (SVG glyphs, CDK tooltip), customization\n through CSS variables, class hooks and...",
+    "breadcrumb": [
+      {
+        "label": "Migration",
+        "route": "content/migration"
+      },
+      {
+        "label": "Migration",
+        "route": "content/migration/README"
+      }
+    ]
+  },
+  {
+    "label": "Release Notes",
+    "description": "What 22.2.0 of @fsegurai/ngx-sidenav added, fixed and changed, with links to the migration guide.",
+    "route": "content/release-notes/README",
+    "tags": ["release-notes", "changelog"],
+    "excerpt": "| What's new in 22.2.0 | The highlights of this release, with short examples.",
+    "breadcrumb": [
+      {
+        "label": "Release Notes",
+        "route": "content/release-notes"
+      },
+      {
+        "label": "Release Notes",
+        "route": "content/release-notes/README"
+      }
+    ]
+  },
+  {
+    "label": "What's New in 22.2.0",
+    "description": "The highlights of 22.2.0, an opt-in minor release with header and footer slots, a row end template, a collapsed icon rail, active-row scrolling and back-row context.",
+    "route": "content/release-notes/whats-new",
+    "tags": ["release-notes", "22.2.0"],
+    "headings": [
+      "Header and footer slots",
+      "Row end template",
+      "Icon rail",
+      "Active row and back-row context",
+      "Earlier: 22.1.0"
+    ],
+    "excerpt": "What's New in 22.2.0\n\nEvery feature is opt-in: without them the sidenav renders exactly as in 22.1. All of them are described in\nMenu...",
+    "breadcrumb": [
+      {
+        "label": "Release Notes",
+        "route": "content/release-notes"
+      },
+      {
+        "label": "What's New in 22.2.0",
+        "route": "content/release-notes/whats-new"
+      }
+    ]
+  }
+]
