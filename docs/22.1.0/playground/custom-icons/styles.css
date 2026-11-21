@@ -1,0 +1,38 @@
+/* The preview gives the page its theme (--pg-* variables, body colors and font); the layout fills it. */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  background: var(--pg-bg);
+  color: var(--pg-text);
+}
+
+.layout main {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: auto;
+  padding: 24px 32px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+/*
+ * Icon sizes: the glyph (menu-icon-size) is centered in its box (menu-icon-box-size). Custom glyphs keep the class
+ * of the built-in one plus --custom, e.g. .ngx-sidenav-menu__icon--chevron.ngx-sidenav-menu__icon--custom.
+ */
+:root {
+  --ngx-sidenav-menu-icon-size: 18px;
+  --ngx-sidenav-menu-icon-box-size: 24px;
+  --ngx-sidenav-toggle-icon-size: 20px;
+  --ngx-sidenav-link-item-external-icon-size: 14px;
+  /* The tooltip renders in the CDK overlay container, so its variables live on :root. */
+  --ngx-sidenav-tooltip-border-radius: 6px;
+}

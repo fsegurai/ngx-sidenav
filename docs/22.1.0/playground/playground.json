@@ -1,0 +1,64 @@
+{
+  "imports": {
+    "@angular/compiler": "https://cdn.jsdelivr.net/npm/@angular/compiler@22.2.6/fesm2022/compiler.mjs",
+    "@angular/core": "https://cdn.jsdelivr.net/npm/@angular/core@22.2.6/fesm2022/core.mjs",
+    "@angular/core/primitives/di": "https://cdn.jsdelivr.net/npm/@angular/core@22.2.6/fesm2022/primitives-di.mjs",
+    "@angular/core/primitives/signals": "https://cdn.jsdelivr.net/npm/@angular/core@22.2.6/fesm2022/primitives-signals.mjs",
+    "@angular/core/rxjs-interop": "https://cdn.jsdelivr.net/npm/@angular/core@22.2.6/fesm2022/rxjs-interop.mjs",
+    "@angular/common": "https://cdn.jsdelivr.net/npm/@angular/common@22.2.6/fesm2022/common.mjs",
+    "@angular/common/http": "https://cdn.jsdelivr.net/npm/@angular/common@22.2.6/fesm2022/http.mjs",
+    "@angular/platform-browser": "https://cdn.jsdelivr.net/npm/@angular/platform-browser@22.2.6/fesm2022/platform-browser.mjs",
+    "@angular/router": "https://cdn.jsdelivr.net/npm/@angular/router@22.2.6/fesm2022/router.mjs",
+    "@angular/cdk/a11y": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/a11y.mjs",
+    "@angular/cdk/bidi": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/bidi.mjs",
+    "@angular/cdk/coercion": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/coercion.mjs",
+    "@angular/cdk/keycodes": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/keycodes.mjs",
+    "@angular/cdk/layout": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/layout.mjs",
+    "@angular/cdk/overlay": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/overlay.mjs",
+    "@angular/cdk/platform": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/platform.mjs",
+    "@angular/cdk/portal": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/portal.mjs",
+    "@angular/cdk/private": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/private.mjs",
+    "@angular/cdk/scrolling": "https://cdn.jsdelivr.net/npm/@angular/cdk@22.2.7/fesm2022/scrolling.mjs",
+    "rxjs": "https://cdn.jsdelivr.net/npm/rxjs@7.8.2/+esm",
+    "rxjs/operators": "https://cdn.jsdelivr.net/npm/rxjs@7.8.2/+esm",
+    "@fsegurai/ngx-sidenav": "https://cdn.jsdelivr.net/npm/@fsegurai/ngx-sidenav@{version}/fesm2022/fsegurai-ngx-sidenav.mjs"
+  },
+  "samples": [
+    {
+      "id": "items-menu",
+      "label": "Nested menu from items",
+      "description": "A resizable sidenav built from StackMenuItem objects: titles, nested levels, badges, tooltips, disabled and external rows, with the opened, closed and resized outputs logged. The first run downloads Angular (about 1.5 MB).",
+      "files": ["main.js", "styles.css", "index.html"]
+    },
+    {
+      "id": "manifest-search",
+      "label": "Manifest and search",
+      "description": "withManifest and withSearchIndex fed with inline manifest-generator data (no network): the menu and a ranked search box that navigates to the matching page.",
+      "files": ["main.js", "styles.css", "index.html"]
+    },
+    {
+      "id": "page-helpers",
+      "label": "Breadcrumbs and previous/next",
+      "description": "fromManifestGenerator maps an inline manifest; for the current URL, findManifestItem finds the page (with its publishedAt and updatedAt dates), breadcrumbFor builds the breadcrumb (breadcrumbTitle or the page's own breadcrumb) and adjacentItems the previous and next links.",
+      "files": ["main.js", "styles.css", "index.html"]
+    },
+    {
+      "id": "custom-icons",
+      "label": "Custom icons and glyphs",
+      "description": "No icon font and no Angular Material: an ngxSidenavItemIcon template renders every item icon with the app's own SVG component, and ngxSidenavGlyph templates replace the back, chevron, external and toggle glyphs; icon sizes set with CSS variables.",
+      "files": ["main.js", "styles.css", "index.html"]
+    },
+    {
+      "id": "theming-labels",
+      "label": "Theming and labels",
+      "description": "Translated labels with provideSidenav, a light/dark switch, a custom color theme through CSS variables, and the position and direction inputs.",
+      "files": ["main.js", "styles.css", "index.html"]
+    },
+    {
+      "id": "responsive-mode",
+      "label": "Responsive mode",
+      "description": "mode=\"auto\" switches between side-by-side and a fixed overlay (backdrop, focus trap, Escape) with handsetQuery; collapseOnNavigate closes the overlay after a navigation. Switch the mode and the query to compare.",
+      "files": ["main.js", "styles.css", "index.html"]
+    }
+  ]
+}

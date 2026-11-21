@@ -1,0 +1,164 @@
+/* The preview gives the page its theme (--pg-* variables, body colors and font); the layout fills it. */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* The sidenav controls its own width (collapsed or resized), so a flex row is enough. */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.layout main {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: auto;
+  padding: 24px 32px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--pg-text-muted);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: 6px;
+}
+
+.breadcrumb a {
+  color: var(--pg-primary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--pg-text);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0 0 24px;
+  color: var(--pg-text-muted);
+  font-size: 0.9rem;
+}
+
+.lead {
+  max-width: 560px;
+  line-height: 1.5;
+}
+
+/* Previous on the left, next on the right, also when only one of them exists. */
+.pager {
+  display: flex;
+  gap: 12px;
+  max-width: 560px;
+  margin: 32px 0;
+}
+
+.pager a {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  border: 1px solid var(--pg-border);
+  border-radius: var(--pg-radius);
+  background: var(--pg-surface);
+  color: var(--pg-text);
+  text-decoration: none;
+}
+
+.pager a:hover,
+.pager a:focus-visible {
+  border-color: var(--pg-primary);
+}
+
+.pager .next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.pager small {
+  color: var(--pg-text-muted);
+}
+
+.pager span {
+  color: var(--pg-primary);
+  font-weight: 600;
+}
+
+.helpers {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 16px;
+  max-width: 560px;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.helpers dd {
+  margin: 0;
+  color: var(--pg-text-muted);
+}
+
+.hint {
+  max-width: 560px;
+  margin-top: 32px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--pg-primary);
+  border-radius: var(--pg-radius);
+  background: var(--pg-surface);
+  color: var(--pg-text-muted);
+  font-size: 0.9rem;
+}
+
+/*
+ * The sidenav follows the preview theme: it reads [data-theme] on <html> for its light/dark scheme (set
+ * --ngx-sidenav-color-scheme instead when no ancestor carries it), and its colors are the --pg-* variables.
+ */
+.layout {
+  --ngx-sidenav-container-background-color: var(--pg-surface);
+  --ngx-sidenav-text-color: var(--pg-text);
+  --ngx-sidenav-link-item-text-color: var(--pg-text);
+  --ngx-sidenav-link-item-text-color-hover: var(--pg-text);
+  --ngx-sidenav-link-item-background-color-hover: color-mix(in srgb, var(--pg-primary) 10%, transparent);
+  --ngx-sidenav-link-item-border-left-color: var(--pg-border);
+  --ngx-sidenav-link-item-border-left-color-hover: var(--pg-primary);
+  --ngx-sidenav-link-item-text-color-active: var(--pg-primary);
+  --ngx-sidenav-link-item-background-color-active: color-mix(in srgb, var(--pg-primary) 16%, transparent);
+  --ngx-sidenav-link-item-border-left-color-active: var(--pg-primary);
+  --ngx-sidenav-link-item-title-text-color: var(--pg-text-muted);
+  --ngx-sidenav-link-item-parent-text-color: var(--pg-text);
+  --ngx-sidenav-menu-back-background-color: var(--pg-surface-alt);
+  --badge-function: var(--pg-accent);
+  --ngx-sidenav-scrollbar-thumb-color: var(--pg-border);
+  --ngx-sidenav-scrollbar-thumb-color-hover: var(--pg-text-muted);
+  --ngx-sidenav-toggle-background-color: var(--pg-surface-alt);
+  --ngx-sidenav-toggle-background-color-hover: color-mix(in srgb, var(--pg-primary) 18%, var(--pg-surface-alt));
+  --ngx-sidenav-toggle-border-color: var(--pg-border);
+  --ngx-sidenav-toggle-border-color-hover: var(--pg-primary);
+  --ngx-sidenav-toggle-icon-color: var(--pg-primary);
+  --ngx-sidenav-resize-handle-indicator-background-color: var(--pg-primary);
+  --ngx-sidenav-resize-handle-indicator-background-color-hover: var(--pg-primary);
+  --ngx-sidenav-resize-handle-indicator-line-background-color: var(--pg-border);
+  --ngx-sidenav-focus-ring: var(--pg-primary);
+}

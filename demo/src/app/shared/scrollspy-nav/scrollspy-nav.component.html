@@ -1,0 +1,8 @@
+<ul class="scrollspy-nav">
+  @for (heading of headings(); track heading.id) {
+    <li>
+      <!-- The static href is replaced by routerLink, which renders the current route with the fragment -->
+      <a href="/" [fragment]="heading.id" routerLink=".">{{ heading.textContent }}</a>
+    </li>
+  }
+</ul>
